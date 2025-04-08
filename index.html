@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Bantuan</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Form Bantuan</h1>
+        <p style="text-align: center; margin-bottom: 25px;">Silakan isi form berikut untuk mendapatkan bantuan dari kami</p>
+        
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name" class="required">Nama Lengkap</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap">
+                <span class="error" id="nameError">Nama lengkap wajib diisi</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan alamat email">
+                <span class="error" id="emailError">Email wajib diisi</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon">
+                <span class="error" id="phoneError">Nomor telepon tidak valid (min 10 angka)</span>
+            </div>
+            
+            <div class="address-section">
+                <h2>Alamat Lengkap</h2>
+                <div class="form-group">
+                    <label for="provinsi" class="required">Provinsi</label>
+                    <select id="provinsi" name="provinsi">
+                        <option value="">Pilih Provinsi</option>
+                    </select>
+                    <span class="error" id="provinsiError">Provinsi wajib dipilih</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="kabupaten" class="required">Kabupaten/Kota</label>
+                    <select id="kabupaten" name="kabupaten" disabled>
+                        <option value="">Pilih Kabupaten</option>
+                    </select>
+                    <span class="error" id="kabupatenError">Kabupaten wajib dipilih</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="kecamatan" class="required">Kecamatan</label>
+                    <select id="kecamatan" name="kecamatan" disabled>
+                        <option value="">Pilih Kecamatan</option>
+                    </select>
+                    <span class="error" id="kecamatanError">Kecamatan wajib dipilih</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="desa" class="required">Desa/Kelurahan</label>
+                    <select id="desa" name="desa" disabled>
+                        <option value="">Pilih Desa</option>
+                    </select>
+                    <span class="error" id="desaError">Desa wajib dipilih</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="alamat" class="required">Alamat Detail</label>
+                    <textarea id="alamat" name="alamat" placeholder="Masukkan alamat lengkap (nama jalan, nomor rumah, dll)"></textarea>
+                    <span class="error" id="alamatError">Alamat detail wajib diisi</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject" class="required">Subjek</label>
+                <select id="subject" name="subject">
+                    <option value="">-- Pilih Subjek --</option>
+                    <option value="pertanyaan">Pertanyaan</option>
+                    <option value="keluhan">Keluhan</option>
+                    <option value="saran">Saran</option>
+                    <option value="kerjasama">Penawaran Kerjasama</option>
+                </select>
+                <span class="error" id="subjectError">Subjek wajib dipilih</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="message" class="required">Pesan</label>
+                <textarea id="message" name="message" placeholder="Tulis pesan Anda"></textarea>
+                <span class="error" id="messageError">Pesan wajib diisi (minimal 10 karakter)</span>
+            </div>
+            
+            <div class="form-group agree-container">
+                <input type="checkbox" id="agree" name="agree">
+                <label for="agree">Saya setuju dengan syarat dan ketentuan</label>
+                <span class="error" id="agreeError">Anda harus menyetujui syarat dan ketentuan</span>
+            </div>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+        
+        <div id="successMessage" class="success">
+            Terima kasih! Pesan Anda telah berhasil dikirim.
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
